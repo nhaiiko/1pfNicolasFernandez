@@ -1,0 +1,21 @@
+.right-sidenav-content {
+    width: auto; 
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+/*   .custom-dialog-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    max-width: none;
+    height: 100%;
+    width: 300px; 
+    padding: 0; 
+    overflow: hidden;
+  } */

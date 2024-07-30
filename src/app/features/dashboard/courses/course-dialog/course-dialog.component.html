@@ -1,18 +1,20 @@
-<h2 mat-dialog-title>Crear curso</h2>
+<h2 mat-dialog-title>
+  {{editingCourse ? 'Editando curso ' + editingCourse.nombre : 'Crear curso'}}
+</h2>
 <mat-dialog-content>
     <form style="display: flex; flex-direction: column;" [formGroup]="courseForm">
 
         <mat-form-field>
             <mat-label>Nombre</mat-label>
-            <input formControlName="name" matInput>
+            <input formControlName="nombre" matInput>
             <mat-error>El campo es requeridos</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate formControlName="startDate" placeholder="Fecha inicio">
-              <input matEndDate formControlName="endDate" placeholder="Fecha Fin">
+              <input matStartDate formControlName="fechaInicio" placeholder="Fecha inicio">
+              <input matEndDate formControlName="fechaFin" placeholder="Fecha Fin">
             </mat-date-range-input>
             <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>

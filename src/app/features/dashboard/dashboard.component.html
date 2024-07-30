@@ -1,40 +1,26 @@
 
 <!-- TOOLBAR -->
-<mat-toolbar>
 
-
+  
+<mat-drawer-container  class="example-container" autosize>
+  <mat-toolbar>
     <button type="button" mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-
-
-
-    <span appResaltado>Accede al {{"menu" | reverse}}</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar>
-  
-<mat-drawer-container class="example-container" autosize>
-
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <span>Accede al menu</span>
+  </mat-toolbar>
+    <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
       <mat-nav-list>
-        <a mat-list-item href="...">{{"Inicio" | reverse}}</a>
-        <a mat-list-item href="...">{{"Cursos" | reverse}}</a>
-        <a mat-list-item href="...">{{"Alumnos" | reverse}}</a>
-        <a mat-list-item href="...">{{"Inscripciones" | reverse}}</a>
+        <a mat-list-item routerLink="home">Inicio</a>
+        <a mat-list-item routerLink="courses">Cursos</a>
+        <a mat-list-item routerLink="students">Alumnos</a>
+        <a mat-list-item href="...">Inscripciones</a>
       </mat-nav-list>
     </mat-drawer>
   
-    <div class="example-sidenav-content">
-      <app-courses></app-courses> 
-      <!-- <app-pipes></app-pipes> -->
-
+    <div class="example-sidenav-content  p-3">
+      <router-outlet></router-outlet>
     </div>
   
-  </mat-drawer-container>
+</mat-drawer-container>
   
